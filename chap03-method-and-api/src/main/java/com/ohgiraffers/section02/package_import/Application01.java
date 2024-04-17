@@ -1,5 +1,6 @@
 package main.java.com.ohgiraffers.section02.package_import;
 
+import main.java.com.ohgiraffers.section01.method.Calculator;
 import static main.java.com.ohgiraffers.section01.method.Calculator.maxnumberof;
 
 

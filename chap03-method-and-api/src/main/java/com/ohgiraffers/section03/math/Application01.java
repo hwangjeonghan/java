@@ -11,6 +11,8 @@ public class Application01 {
          **/
 
         System.out.println(java.lang.Math.abs(-4));
+                   //패키지 (소문자) //클레스  // 메서드(참조)
+        // static(정적인 메모리)
 
     }
 }

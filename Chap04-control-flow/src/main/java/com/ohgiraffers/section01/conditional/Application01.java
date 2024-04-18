@@ -54,7 +54,7 @@ public class Application01 {
     // 6. 연산을 진행한다.
     // 7. 반환한다.
     //한번에 연산식 입력받기
-    public String call() {
+        public String call() {          // 콜 이라는 메서드를 만든다 접근제어자에 스트링이라는 자료명
         Scanner sc = new Scanner(System.in); //스캐너 화면에서
         String input = sc.nextLine();        // 넥스트 라인 : 한 라인에 다 나타낸다
         String[] target = input.split(" ");  // String[] input = "1 + 2" [] 0번쨰 :"1" 1번쨰 :"+" 2번째 : "2"

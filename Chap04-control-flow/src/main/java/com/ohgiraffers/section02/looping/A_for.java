@@ -1,7 +1,7 @@
 package com.ohgiraffers.section02.looping;
 
 import java.util.Scanner;
-
+//대상의길이를 알때
 public class A_for {
     public void testSimpleForStatemnet() {
         /*

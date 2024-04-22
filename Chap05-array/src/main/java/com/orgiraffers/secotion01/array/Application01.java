@@ -2,7 +2,7 @@ package com.orgiraffers.secotion01.array;
 
 public class Application01 {
     public static void main(String[] args) {
-        /*
+        /* 배열은 길이를 갖는다
         * 배열이란?
         * 동일한 자료형의 묶음 (연속된 메모리 공간에 값을 저장하고 사용하기 위한 용도)이다.
         *  배열은 heap 영역에 new 연산자를 이용하여 할당한다.
@@ -50,7 +50,7 @@ public class Application01 {
         int[] iarr = new int[5];    // 0~4
         char carr[] = new char[10]; // 0~9
         iarr[2] = 10;
-       // int result = iarr[2];
+        //int result = iarr[2];
 
         System.out.println(iarr[2]);
         System.out.println(iarr); // 변수는 주소!!!

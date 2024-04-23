@@ -4,8 +4,5 @@ public class Person {
     Book book;
     String hname;
 
-    private int num;
- public void set (int num) {
 
  }
-}

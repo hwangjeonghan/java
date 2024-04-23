@@ -2,18 +2,18 @@ package com.ohgiraffers.order.dto;
 
 public class OrderDTO {
 
-    private String menuname;
+    private String menuName;
 
     private int price;
 
     private int quantity;
 
-    public String getMenuname() {
-        return menuname;
+    public String getMenuName() {
+        return menuName;
     }
 
-    public void setMenuname(String menuname) {
-        this.menuname = menuname;
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
     }
 
     public int getPrice() {
@@ -34,7 +34,7 @@ public class OrderDTO {
     @Override
     public String toString() {
         return "OrderDTO{" +
-                "menuname='" + menuname + '\'' +
+                "menuName='" + menuName + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
                 '}';

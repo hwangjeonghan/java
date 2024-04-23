@@ -10,7 +10,7 @@ public class OrderService {
     // 비즈니스 로직 수행 및 데이터 베이스의 대한 리소스를 관리한다.
 
     public String order(OrderDTO orderDTO){
-        if(!orderDTO.getMenuname().equals("아메리카노")){
+        if(!orderDTO.getMenuName().equals("아메리카노")){
             return "주문실패";
         }
         if(orderDTO.getPrice() <= 0){
@@ -19,5 +19,12 @@ public class OrderService {
         String result = orderRepository.order(orderDTO);
 
         return result;
+    }
+    public void orderRead(){
+        orderRepository.print();
+    }
+    public void orderDelete(int delete){
+        orderRepository.remove(delete);
+
     }
 }

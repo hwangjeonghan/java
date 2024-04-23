@@ -5,7 +5,7 @@ import com.ohgiraffers.order.dto.OrderDTO;
 
 import java.util.Scanner;
 
-public class Appilcation {
+public class Application {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -39,7 +39,10 @@ public class Appilcation {
                     result = orderController.oder(orderDTO);
                     break;
                 case 2 : //주문삭제
-                    orderController.orderDelete();
+                    System.out.print("삭제 할 주문 번호를 입력하세요");
+                    int delete = sc.nextInt();
+                    sc.nextLine();
+                    orderController.orderDelete(delete);
                     break;
                 case 3 : //주문 수정
                     orderController.orderModify();

@@ -12,9 +12,17 @@ public class OrderRepository {
         int oldNum = orders.size();
 
         orders.add(orderDTO);
-        if(oldNum > orders.size()){
+        if (oldNum >= orders.size()) {
             return "등록실패";
         }
         return "등록성공";
+    }
+
+    public void print() {
+        System.out.println(this.orders);
+    }
+    public void remove(int delete){
+        orders.remove(delete);
+
     }
 }

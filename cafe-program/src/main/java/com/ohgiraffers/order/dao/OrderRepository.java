@@ -5,8 +5,8 @@ import com.ohgiraffers.order.dto.OrderDTO;
 import java.util.ArrayList;
 
 public class OrderRepository {
-    ArrayList orders = new ArrayList();
-
+   private final ArrayList orders = new ArrayList();
+   // 초기화하지 못하게 하는것
     public String order(OrderDTO orderDTO) {
         //0
         int oldNum = orders.size();
@@ -18,11 +18,19 @@ public class OrderRepository {
         return "등록성공";
     }
 
-    public void print() {
-        System.out.println(this.orders);
+    public ArrayList print() {
+        return this.orders;
     }
-    public void remove(int delete){
-        orders.remove(delete);
 
+    public OrderDTO orderDetail(int no){
+        OrderDTO order = (OrderDTO) orders.get(no);
+        return order;
     }
+    public void remove(int no){
+        int oldSize = orderDB.getOrders().size();
+        orderDB.getOrders().remove(no);
+        
+    }
+
+
 }

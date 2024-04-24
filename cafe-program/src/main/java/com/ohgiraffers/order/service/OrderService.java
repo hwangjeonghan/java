@@ -3,9 +3,11 @@ package com.ohgiraffers.order.service;
 import com.ohgiraffers.order.dao.OrderRepository;
 import com.ohgiraffers.order.dto.OrderDTO;
 
+import java.util.ArrayList;
+
 public class OrderService {
 
-    private OrderRepository orderRepository = new OrderRepository();
+    private final OrderRepository orderRepository = new OrderRepository();
     // 서비스 계층
     // 비즈니스 로직 수행 및 데이터 베이스의 대한 리소스를 관리한다.
 
@@ -20,11 +22,15 @@ public class OrderService {
 
         return result;
     }
-    public void orderRead(){
-        orderRepository.print();
-    }
-    public void orderDelete(int delete){
-        orderRepository.remove(delete);
+    public ArrayList orderRead(){
+        return orderRepository.print();
 
+    }
+    public void orderDelete(int no) {
+     String result = orderRepository.orderDelete(no);
+    }
+    public OrderDTO orderDetail(int no) {
+        OrderDTO order = orderRepository.orderDetail(no);
+        return order;
     }
 }

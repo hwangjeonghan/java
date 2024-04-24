@@ -2,12 +2,18 @@ package com.ohgiraffers.order.dto;
 
 public class OrderDTO {
 
+
     private String menuName;
 
     private int price;
 
     private int quantity;
 
+    public OrderDTO(String menu, int quantity, int price) {
+        this.menuName = menu;
+        this.quantity = quantity;
+        this.price = price;
+    }
     public String getMenuName() {
         return menuName;
     }

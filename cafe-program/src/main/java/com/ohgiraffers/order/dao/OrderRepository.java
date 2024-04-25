@@ -5,13 +5,16 @@ import com.ohgiraffers.order.dto.OrderDTO;
 import java.util.ArrayList;
 
 public class OrderRepository {
-   private final ArrayList orders = new ArrayList();
-   // 초기화하지 못하게 하는것
-    public String order(OrderDTO orderDTO) {
+    private final ArrayList orders = new ArrayList();
+
+    // 초기화하지 못하게 하는것
+    public String order(OrderDTO[] order) {
         //0
         int oldNum = orders.size();
 
-        orders.add(orderDTO);
+        for(OrderDTO orderDTO : order) {
+            orders.add(orderDTO);
+        }
         if (oldNum >= orders.size()) {
             return "등록실패";
         }
@@ -22,15 +25,15 @@ public class OrderRepository {
         return this.orders;
     }
 
-    public OrderDTO orderDetail(int no){
+    public OrderDTO orderDetail(int no) {
         OrderDTO order = (OrderDTO) orders.get(no);
         return order;
     }
-    public void remove(int no){
-        int oldSize = orderDB.getOrders().size();
-        orderDB.getOrders().remove(no);
-        
+
+    public String remove(int delete) {
+
+        orders.remove(delete);
+        return delete + "번호가 삭제되었습니다";
+
+        }
     }
-
-
-}

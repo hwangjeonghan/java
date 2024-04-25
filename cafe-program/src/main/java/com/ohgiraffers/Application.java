@@ -27,42 +27,58 @@ public class Application {
           //  OrderDTO orderDTO = new OrderDTO(); 빈 빌지가 되어버리니까 빌지에 메뉴 수량 가격을 받을수있게 만들어서 바꾼거임
 
 
-
-
             switch (input){
                 case 1 : //주문등록
-                    System.out.println("메뉴를 이름 입력해주세요");
-                    String menu = sc.nextLine();
-                    System.out.print("수량을 입력 해 주세요 : ");
-                    int quantity = sc.nextInt();
+                    System.out.println("몇개의 메뉴를 주문하시겠습니까? ");
+                    int cnt = sc.nextInt();
                     sc.nextLine();
-                    System.out.print("가격을 입력 해 주세요 : ");
-                    int price = sc.nextInt();
-                    OrderDTO orderDTO = new OrderDTO(menu , quantity , price);
-                    orderController.order(orderDTO);
-                    result = orderController.order(orderDTO);
+
+                    OrderDTO[] orders = new OrderDTO[cnt];
+
+                    for(int i = 0; i < orders.length; i++){
+                        System.out.print("메뉴를 입력해 주세요 : ");
+                        String menu = sc.nextLine(); //아메리카노 카푸치노 밀크
+                        System.out.print("수량을 입력 해 주세요 : ");
+                        int quantity = sc.nextInt(); // 1 2 3
+                        sc.nextLine();
+                        System.out.print("가격을 입력 해 주세요 : ");
+                        int price = sc.nextInt();
+                        sc.nextLine();
+                        orders[i] = new OrderDTO(menu , quantity , price);
+                    }
+                    //10 20 30
+//                   menu2[0] quan2[0] price2[0]
+//                        for(i= 0 ;i < menu2.leght;i++) {
+//                            OrderDTO orderdto = new OrderDTO(menu2[i], quan2[i], price2[i]);
+//                            orderController.order(orderDTO);
+//                            // 한줄한줄 잘따라가자
+                   // OrderDTO orderDTO = new OrderDTO(menu , quantity , price);
+                    result = orderController.order(orders);
+
                     break;
                 case 2 : //주문삭제
                     System.out.print("삭제 할 주문 번호를 입력하세요");
                     int delete = sc.nextInt();
                     sc.nextLine();
-                    orderController.orderDelete(delete);
+                    result = orderController.orderDelete(delete);
                     break;
                 case 3 : //주문 수정
-                    orderController.orderModify();
+                    System.out.println("수정할 영수증을 입력해 주세요");
+                    int num2 = sc.nextInt();
+
+                    orderController.orderModify(num2);
                     break;
 
                 case 4 : //주문 상세조회
-                    System.out.println(orderController.orderRead());
                     System.out.println("상세 조회할 제품 번호를 입력해주세요");
                     int num = sc.nextInt();
                     sc.nextLine();
-                    result = orderController.orderDelete(num);
+                    result = orderController.orderDetail(num);
 
                     break;
 
                 case 5 : //주문 전체조회
-                    result = orderController.orderRead();
+                    orderController.orderRead();
                     break;
 
                 default:
@@ -70,6 +86,9 @@ public class Application {
                     System.out.print("입력이 잘못되었습니다.");
                     break;
             }
+
+            System.out.println(result);
+
             System.out.print("주문을 종료하시겠나요?");
             order = sc.nextBoolean();
 

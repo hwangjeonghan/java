@@ -35,26 +35,26 @@ public class OrderController {
 
     }
 
-    public String orderModify(int num2) {
-        if (num2 < 0) {
+    public String orderModify(int sel) {
+        if (sel < 0) {
             return "똑바로 입력해주세요 ";
         }
-        int x = 0;
+        int num = 0;
         System.out.println("수정을 원하는 정보를 입력해 주세요(메뉴,가격,수량)");
         String input = sc.nextLine();
         if (input.equals("메뉴")) {
-            x = 1;
+            num = 1;
         }else if(input.equals("가격")) {
-            x = 2;
+            num = 2;
         }else if(input.equals("수량")){
-            x = 3;
+            num = 3;
         }else{
-            return "입력이 틀렸습니다 확인하세요";
-        }return orderService.order(x);
+            return "입력이 틀렸습니다 다시 확인하세요";
 
+        }System.out.println("덮어쓸 정보를 입력해주세요");
+        String input2 = sc.nextLine();
+        return orderService.orderModify(sel, num, input2);
 
-
-        return "주문수정";
 
     }
 

@@ -22,6 +22,10 @@ public class OrderDTO {
         this.menuName = menuName;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public int getPrice() {
         return price;
     }
@@ -31,7 +35,7 @@ public class OrderDTO {
         return quantity;
     }
 
-    public void setQuantity(int quantity, int price) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
         this.price = quantity * price;
 

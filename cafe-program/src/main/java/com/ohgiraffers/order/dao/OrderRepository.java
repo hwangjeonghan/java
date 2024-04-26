@@ -36,4 +36,28 @@ public class OrderRepository {
         return delete + "번호가 삭제되었습니다";
 
         }
-    }
+        public String orderModify(int num, int num2,String date) {
+            if (num < orders.size()) {
+
+                OrderDTO order = (OrderDTO) orders.get(num);
+                switch (num2) {
+                    case 1:
+                        order.setMenuName(date);
+                        break;
+
+                    case 2:
+                        order.setPrice(Integer.parseInt(date));
+                        break;
+
+                    case 3:
+                        order.setQuantity(Integer.parseInt(date));
+                        break;
+
+                    default:
+                        return "잘못 입력 하였습니다";
+                }
+                return order.toString() + "로 수정하였습니다";
+            } else
+                return "잘못된 입력입니다.";
+        }
+}

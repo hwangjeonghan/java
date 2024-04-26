@@ -41,4 +41,7 @@ public class OrderService {
         OrderDTO order = orderRepository.orderDetail(no);
         return order;
     }
+    public String orderModify(int num , int num2 , String date) {
+        return orderRepository.orderModify(num, num2, date);
+    }
 }

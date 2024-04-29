@@ -1,2 +1,4 @@
-package com.ohgiraffers.Menu.dto;public class OrderDTO {
+package com.ohgiraffers.Menu.dto;
+
+public class OrderDTO {
 }

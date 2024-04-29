@@ -1,2 +1,4 @@
-package com.ohgiraffers.Menu.controller;public class OrderController {
+package com.ohgiraffers.Menu.controller;
+
+public class OrderController {
 }

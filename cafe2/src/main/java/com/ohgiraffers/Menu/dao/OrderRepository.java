@@ -1,2 +1,4 @@
-package com.ohgiraffers.Menu.dao;public class OrderRepository {
+package com.ohgiraffers.Menu.dao;
+
+public class OrderRepository {
 }

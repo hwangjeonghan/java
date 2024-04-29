@@ -1,2 +1,4 @@
-package com.ohgiraffers.Menu.service;public class OrderService {
+package com.ohgiraffers.Menu.service;
+
+public class OrderService {
 }

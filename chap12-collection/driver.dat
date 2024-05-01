@@ -1,0 +1,6 @@
+#jdbc driver
+#Wed May 01 15:36:40 KST 2024
+dribver=com.mysql.jdbc.Driver
+password=1234
+user=falcon
+url=jdbc\:mysql\://localhost\:3306/falon

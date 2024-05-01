@@ -1,4 +1,4 @@
-package com.ohgiraffers.fakeDB;
+package com.ohgiraffers.Menu.fakeDB;
 
 import com.ohgiraffers.order.dto.OrderDTO;
 
@@ -11,7 +11,7 @@ public class OrderDB {
 
     private OrderDB(){
         orders = new ArrayList();
-        OrderDTO orderDTO = new OrderDTO("아메리카노", 1000, 3);
+        OrderDTO orderDTO = new OrderDTO("", 1000, 3);
         orders.add(orderDTO);
 
     }

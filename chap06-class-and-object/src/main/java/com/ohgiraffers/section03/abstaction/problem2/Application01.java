@@ -7,6 +7,7 @@ public class Application01 {
 
         CarRacer carRacer = new CarRacer();
 
+        carRacer.go(car1);
         carRacer.starUp(car);
         carRacer.go(car1);
         carRacer.stop(car1);

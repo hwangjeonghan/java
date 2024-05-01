@@ -1,63 +1,51 @@
 package com.ohgiraffers.order.dao;
 
+import com.ohgiraffers.Menu.fakeDB.OrderDB;
 import com.ohgiraffers.order.dto.OrderDTO;
 
 import java.util.ArrayList;
 
 public class OrderRepository {
-    private final ArrayList orders = new ArrayList();
+    private final OrderDB orderDB = OrderDB.getInstance();
 
-    // 초기화하지 못하게 하는것
-    public String order(OrderDTO[] order) {
+    public String order(OrderDTO[] orders){
         //0
-        int oldNum = orders.size();
+        int oldNum = orderDB.getOrders().size();
 
-        for(OrderDTO orderDTO : order) {
-            orders.add(orderDTO);
+        for (OrderDTO orderDTO: orders) {
+            orderDB.setItem(orderDTO);
         }
-        if (oldNum >= orders.size()) {
+
+        if(oldNum >= orderDB.getOrders().size()){
             return "등록실패";
         }
+
         return "등록성공";
     }
 
-    public ArrayList print() {
-        return this.orders;
+    public ArrayList orderRead() {
+        String text = orderDB.getOrders().toString();
+        System.out.println("~~~~~");
+        System.out.println(orderDB.getOrders().toString());
+
+        System.out.println("~~~");
+        return orderDB.getOrders();
+
     }
 
     public OrderDTO orderDetail(int no) {
-        OrderDTO order = (OrderDTO) orders.get(no);
+
+        OrderDTO order = (OrderDTO) orderDB.getOrders().get(no);
         return order;
     }
 
-    public String remove(int delete) {
-
-        orders.remove(delete);
-        return delete + "번호가 삭제되었습니다";
-
+    public String orderDelete(int no) {
+        int oldSize = orderDB.getOrders().size();
+        orderDB.getOrders().remove(no);
+        if(orderDB.getOrders().size() >= oldSize){
+            return "주문 취소가 실패하였습니다.";
         }
-        public String orderModify(int num, int num2,String date) {
-            if (num < orders.size()) {
+        return "주문이 취소되었습니다.";
 
-                OrderDTO order = (OrderDTO) orders.get(num);
-                switch (num2) {
-                    case 1:
-                        order.setMenuName(date);
-                        break;
-
-                    case 2:
-                        order.setPrice(Integer.parseInt(date));
-                        break;
-
-                    case 3:
-                        order.setQuantity(Integer.parseInt(date));
-                        break;
-
-                    default:
-                        return "잘못 입력 하였습니다";
-                }
-                return order.toString() + "로 수정하였습니다";
-            } else
-                return "잘못된 입력입니다.";
-        }
+    }
 }

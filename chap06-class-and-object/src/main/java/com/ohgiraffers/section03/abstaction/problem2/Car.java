@@ -30,10 +30,10 @@ public class Car {
 
     public void go() {
         if (this.isOn) {
+            System.out.println("차의 시동을 걸어주세요.");
+        } else {
             this.speed += 10;
             System.out.println(" 현재 시속은 " + this.speed + "k/m 입니다.");
-        } else {
-            System.out.println("차의 시동을 걸어주세요.");
         }
     }
 

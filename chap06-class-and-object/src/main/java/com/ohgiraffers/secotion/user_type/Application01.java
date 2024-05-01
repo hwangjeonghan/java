@@ -2,6 +2,7 @@ package com.ohgiraffers.secotion.user_type;
 
 public class Application01 {
     public static void main(String[] args) {
+
         String id = "정한1";
         String pwd = "pass01";
         String name = "황정한";
